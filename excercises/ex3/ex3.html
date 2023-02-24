@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="">
+    <input type="number" id="firstNumber">
+    <input type="number" id="secondNumber">
+    <br>
+    <br>
+
+    <button type="button" id="add">Addition(+)</button>
+    <button type="button" id="sub">Subtraction(-)</button>
+    <button type="button" id="mul">Multiplication(x)</button>
+    <button type="button" id="div">Division(/)</button>
+    <br>
+
+    <p id="result" style="color: blue"></p>
+</form>
+
+<script>
+    let firstNumber = document.getElementById('firstNumber')
+    firstNumber.addEventListener('change', getFirstNumber)
+    let firstValue
+    function getFirstNumber(){
+        firstValue = parseFloat(firstNumber.value)
+    }
+
+    let secondNumber = document.getElementById('secondNumber')
+    secondNumber.addEventListener('change', getSecondNumber)
+    let secondValue
+    function getSecondNumber(){
+        secondValue = parseFloat(secondNumber.value)
+    }
+
+    let add = document.getElementById('add')
+    add.addEventListener('click', doAdd)
+    function doAdd(){
+        getFirstNumber()
+        getSecondNumber()
+        let result = firstValue + secondValue
+        document.getElementById('result').innerHTML = 'Result: ' + result
+    }
+
+    let sub = document.getElementById('sub')
+    sub.addEventListener('click', doSub)
+    function doSub(){
+        getFirstNumber()
+        getSecondNumber()
+        let result = firstValue - secondValue
+        document.getElementById('result').innerHTML = 'Result: ' + result
+    }
+
+    let mul = document.getElementById('mul')
+    mul.addEventListener('click', doMul)
+    function doMul(){
+        getFirstNumber()
+        getSecondNumber()
+        let result = firstValue * secondValue
+        document.getElementById('result').innerHTML = 'Result: ' + result
+    }
+
+    let div = document.getElementById('div')
+    div.addEventListener('click', doDiv)
+    function doDiv(){
+        getFirstNumber()
+        getSecondNumber()
+        let result = firstValue / secondValue
+        document.getElementById('result').innerHTML = 'Result: ' + result
+    }
+
+</script>
+</body>
+</html>
